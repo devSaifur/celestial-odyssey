@@ -1,13 +1,13 @@
-import Logo from "./Logo";
-import Nav from "./Nav";
+import Logo from './Logo'
+import Navigation from './Navigation'
 
 function Header() {
   return (
-    <header>
+    <header className="flex items-center justify-between">
       <Logo />
-      <Nav />
+      <Navigation />
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header
