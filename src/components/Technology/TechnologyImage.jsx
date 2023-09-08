@@ -1,15 +1,17 @@
-import { useData } from '../../context/useData'
-import Image from '../shared/Image'
+import { useParams } from 'react-router-dom'
+import { useCurrentData } from '../../hooks/useCurrentData'
 
 function TechnologyImage() {
-  const { technology } = useData()
+  const { id } = useParams()
+  const { currentTechnology } = useCurrentData(id)
 
   return (
-    <>
-      {technology.map((tech) => (
-        <Image src={tech.images.portrait} name={tech.name} key={tech.id} />
-      ))}
-    </>
+    <div>
+      <img
+        src={currentTechnology?.images.portrait}
+        alt={currentTechnology?.name}
+      />
+    </div>
   )
 }
 

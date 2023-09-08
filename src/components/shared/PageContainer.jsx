@@ -1,36 +1,34 @@
 import { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useWhichPage } from '../../hooks/useWhichPage'
 
 function PageContainer({ children }) {
   const [currentBg, setCurrentBg] = useState('')
-
-  const location = useLocation()
-  const currentPath = location.pathname
+  const { homePage, destinationPage, crewPage, technologyPage } = useWhichPage()
 
   useEffect(
     function () {
-      if (currentPath === '/') {
-        setCurrentBg('bg-home-mobile md:bg-home-tablet lg:bg-home-desktop')
-      } else if (currentPath === '/destination') {
+      if (homePage) {
+        setCurrentBg('bg-home-mobile sm:bg-home-tablet lg:bg-home-desktop')
+      } else if (destinationPage) {
         setCurrentBg(
-          'bg-destination-mobile md:bg-destination-tablet lg:bg-destination-desktop'
+          'bg-destination-mobile sm:bg-destination-tablet lg:bg-destination-desktop'
         )
-      } else if (currentPath === '/crew') {
-        setCurrentBg('bg-crew-mobile md:bg-crew-tablet lg:bg-crew-desktop')
-      } else if (currentPath === '/technology') {
+      } else if (crewPage) {
+        setCurrentBg('bg-crew-mobile sm:bg-crew-tablet lg:bg-crew-desktop')
+      } else if (technologyPage) {
         setCurrentBg(
-          'bg-technology-mobile md:bg-technology-tablet lg:bg-technology-desktop'
+          'bg-technology-mobile sm:bg-technology-tablet lg:bg-technology-desktop'
         )
       }
     },
-    [currentPath]
+    [homePage, destinationPage, crewPage, technologyPage, setCurrentBg]
   )
 
   return (
     <div
       className={
         currentBg +
-        ' text-white h-screen overflow-hidden bg-cover px-5 py-4 font-sans lg:flex lg:flex-col'
+        ' h-screen overflow-hidden bg-cover font-sans text-white lg:flex lg:flex-col'
       }
     >
       {children}

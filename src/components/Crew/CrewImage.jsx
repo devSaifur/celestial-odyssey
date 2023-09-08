@@ -1,15 +1,14 @@
-import { useData } from '../../context/useData'
-import Image from '../shared/Image'
+import { useParams } from 'react-router-dom'
+import { useCurrentData } from '../../hooks/useCurrentData'
 
 function CrewImage() {
-  const { crews } = useData()
+  const { id } = useParams()
+  const { currentCrew } = useCurrentData(id)
 
   return (
-    <>
-      {crews.map((crew) => (
-        <Image src={crew.images.webp} name={crew.name} key={crew.id} />
-      ))}
-    </>
+    <div>
+      <img src={currentCrew.images.webp} alt={currentCrew.name} />
+    </div>
   )
 }
 

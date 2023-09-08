@@ -1,19 +1,14 @@
-import { useData } from '../../context/useData'
-import Image from '../shared/Image'
+import { useParams } from 'react-router-dom'
+import { useCurrentData } from '../../hooks/useCurrentData'
 
 function DestinationImage() {
-  const { destinations } = useData()
+  const { id } = useParams()
+  const { currentDestination } = useCurrentData(id)
 
   return (
-    <>
-      {destinations.map((destination) => (
-        <Image
-          src={destination.images.webp}
-          name={destination.name}
-          key={destination.id}
-        />
-      ))}
-    </>
+    <div>
+      <img src={currentDestination.images.webp} alt={currentDestination.name} />
+    </div>
   )
 }
 

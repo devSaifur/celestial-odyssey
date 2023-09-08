@@ -1,10 +1,13 @@
+import clsx from 'clsx'
+
 function NavClose({ handleNav, isOpen }) {
   return (
     <button
       onClick={handleNav}
-      className={`${
-        isOpen ? `visible` : 'invisible'
-      } absolute right-[-5px] top-[-10px] sm:hidden`}
+      className={clsx({
+        'absolute right-6 top-[-0.5rem] z-50 sm:hidden': isOpen,
+        hidden: !isOpen,
+      })}
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21">
         <g fill="#D0D6F9" fillRule="evenodd">

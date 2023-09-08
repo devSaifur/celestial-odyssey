@@ -1,19 +1,16 @@
-import Description from '../components/shared/Description'
-import Header from '../components/Header/Header'
-import Menu from '../components/shared/Menu'
-import PageContainer from '../components/shared/PageContainer'
+import CrewDescription from '../components/Crew/CrewDescription'
+import CrewMenu from '../components/Crew/CrewMenu'
 import PageTitle from '../components/shared/PageTitle'
-import CrewImage from '../components/Crew/CrewImage'
+import { Outlet } from 'react-router-dom'
 
 function Crew() {
   return (
-    <PageContainer>
-      <Header />
+    <>
       <PageTitle />
-      <CrewImage />
-      <Menu />
-      <Description />
-    </PageContainer>
+      <Outlet />
+      <CrewMenu />
+      <CrewDescription />
+    </>
   )
 }
 

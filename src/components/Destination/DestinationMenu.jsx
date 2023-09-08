@@ -1,12 +1,15 @@
-import { Link } from 'react-router-dom'
+import { useData } from '../../context/useData'
+import Menu from './Menu'
 
-function DestinationMenu({ menuName, menuId }) {
+function DestinationMenu() {
+  const { destinations } = useData()
+
   return (
-    <li>
-      <Link to={menuId}>
-        <span>{menuName}</span>
-      </Link>
-    </li>
+    <ul>
+      {destinations.map((destination) => (
+        <Menu menuName={destination.name} key={destination.id} />
+      ))}
+    </ul>
   )
 }
 

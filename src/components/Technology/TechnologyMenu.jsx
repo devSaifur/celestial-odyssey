@@ -1,9 +1,17 @@
+import { NavLink } from 'react-router-dom'
+
 function TechnologyMenu() {
   return (
     <div>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
+      <div>
+        <NavLink to="1">1</NavLink>
+      </div>
+      <div>
+        <NavLink to="2">2</NavLink>
+      </div>
+      <div>
+        <NavLink to="3">3</NavLink>
+      </div>
     </div>
   )
 }

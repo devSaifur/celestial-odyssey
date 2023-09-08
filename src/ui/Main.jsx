@@ -1,4 +1,4 @@
-function HomeMain({ children }) {
+function Main({ children }) {
   return (
     <main className="flex flex-col lg:mb-20 lg:mt-auto lg:flex-row">
       {children}
@@ -6,4 +6,4 @@ function HomeMain({ children }) {
   )
 }
 
-export default HomeMain
+export default Main
