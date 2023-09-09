@@ -1,19 +1,19 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function CrewMenu() {
   return (
-    <div>
+    <div className="mx-auto flex gap-4 sm:order-2">
       <div>
-        <Link to="1">1</Link>
+        <NavLink to="1">1</NavLink>
       </div>
       <div>
-        <Link to="2">2</Link>
+        <NavLink to="2">2</NavLink>
       </div>
       <div>
-        <Link to="3">3</Link>
+        <NavLink to="3">3</NavLink>
       </div>
       <div>
-        <Link to="4">4</Link>
+        <NavLink to="4">4</NavLink>
       </div>
     </div>
   )

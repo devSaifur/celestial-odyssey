@@ -17,7 +17,7 @@ function Logo() {
 
   return (
     <Link to="/">
-      <div className="ml-6 sm:ml-8">
+      <div className="ml-6 sm:ml-8 lg:ml-12">
         {isSmallScreen ? (
           <svg width="40px" height="40px" xmlns="http://www.w3.org/2000/svg">
             <g

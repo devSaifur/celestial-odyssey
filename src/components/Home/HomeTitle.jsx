@@ -1,6 +1,6 @@
 function HomeTitle() {
   return (
-    <div className="my-10 grid space-y-6 text-center lg:text-start">
+    <div className="my-10 grid text-center sm:my-20 lg:text-start">
       <h2 className=" text-sub-heading-s uppercase tracking-[2.7px] text-light-blue">
         So, you want to travel to
       </h2>

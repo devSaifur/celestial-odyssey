@@ -1,15 +1,19 @@
 import CrewDescription from '../components/Crew/CrewDescription'
 import CrewMenu from '../components/Crew/CrewMenu'
-import PageTitle from '../components/shared/PageTitle'
 import { Outlet } from 'react-router-dom'
+import Title from '../components/shared/Title'
+import Row from '../components/shared/Row'
 
 function Crew() {
   return (
     <>
-      <PageTitle />
+      <Title num="02" title="Meet your crew" />
       <Outlet />
-      <CrewMenu />
-      <CrewDescription />
+
+      <Row>
+        <CrewMenu />
+        <CrewDescription />
+      </Row>
     </>
   )
 }
