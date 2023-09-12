@@ -1,11 +1,14 @@
 import HomeButton from '../components/Home/HomeButton'
 import HomeTitle from '../components/Home/HomeTitle'
+import Main from '../components/Home/Main'
 
 function Home() {
   return (
     <>
-      <HomeTitle />
-      <HomeButton />
+      <Main>
+        <HomeTitle />
+        <HomeButton />
+      </Main>
     </>
   )
 }

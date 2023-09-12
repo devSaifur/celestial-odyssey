@@ -1,15 +1,33 @@
 import { useParams } from 'react-router-dom'
 import { useCurrentData } from '../../hooks/useCurrentData'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 function TechnologyImage() {
   const { id } = useParams()
   const { currentTechnology } = useCurrentData(id)
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
+
+  useEffect(function () {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 768)
+    }
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   return (
-    <div>
+    <div className="lg:order-3 lg:ml-auto lg:mr-0 lg:max-w-lg">
       <img
-        src={currentTechnology?.images.portrait}
-        alt={currentTechnology?.name}
+        src={
+          isSmallScreen
+            ? currentTechnology.images.landscape
+            : currentTechnology.images.portrait
+        }
+        alt={currentTechnology.name}
       />
     </div>
   )

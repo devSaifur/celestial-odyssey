@@ -4,12 +4,12 @@ function useWhichPage() {
   const location = useLocation()
   const currentPath = location.pathname
 
-  const homePage = currentPath === '/'
-  const destinationPage = currentPath.includes('/destination')
-  const crewPage = currentPath.includes('/crew')
-  const technologyPage = currentPath.includes('/technology')
+  const isHomePage = currentPath === '/'
+  const isDestinationPage = currentPath.includes('/destination')
+  const isCrewPage = currentPath.includes('/crew')
+  const isTechnologyPage = currentPath.includes('/technology')
 
-  return { homePage, destinationPage, crewPage, technologyPage }
+  return { isHomePage, isDestinationPage, isCrewPage, isTechnologyPage }
 }
 
 export { useWhichPage }

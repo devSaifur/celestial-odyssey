@@ -1,24 +1,21 @@
 import clsx from 'clsx'
-import { useLocation } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
+import { useWhichPage } from '../../hooks/useWhichPage'
 
 function NavMenu({ isOpen }) {
-  const location = useLocation()
-  const currentPath = location.pathname
-
-  const homePage = currentPath === '/'
+  const { isHomePage } = useWhichPage()
 
   return (
     <nav>
       <ul
         className={clsx(
-          "uppercase sm:static sm:min-h-[6rem] sm:flex-row sm:items-center sm:gap-6 sm:px-12 lg:px-36 lg:before:absolute lg:before:left-[-32rem] lg:before:block lg:before:w-3/4 lg:before:border lg:before:border-gray-500 lg:before:content-['']", // global
+          'uppercase sm:static sm:min-h-[6rem] sm:flex-row sm:items-center sm:gap-6 sm:px-12 lg:px-36 lg:before:absolute lg:before:left-[-32rem] lg:before:block lg:before:w-3/4 lg:before:border lg:before:border-gray-500', // global
           {
             // only when the nav in open on the small screen
             'fixed right-0 top-0 flex h-screen w-3/4 flex-col gap-8 pl-16 pt-32 backdrop-blur-xl':
               isOpen,
             'hidden sm:flex lg:backdrop-blur-xl': !isOpen, // nav is closed by default so It's also setting the bg that's only for homepage
-            'sm:bg-dark-blue': !homePage, // setting default bg for big screens which are not homepage
+            'sm:bg-dark-blue': !isHomePage, // setting default bg for big screens which are not homepage
           }
         )}
       >

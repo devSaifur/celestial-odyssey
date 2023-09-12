@@ -6,7 +6,7 @@ function DestinationImage() {
   const { currentDestination } = useCurrentData(id)
 
   return (
-    <div className="mx-auto max-w-[10.625rem] sm:max-w-[18.75rem] lg:min-w-[27.815rem]">
+    <div className="mx-auto max-w-[10.625rem] sm:max-w-[18.75rem] lg:min-w-[27.815rem] lg:pb-28 lg:pt-16">
       <img src={currentDestination.images.webp} alt={currentDestination.name} />
     </div>
   )
