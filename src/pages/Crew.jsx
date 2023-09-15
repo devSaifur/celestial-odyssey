@@ -1,6 +1,6 @@
+import { Outlet } from 'react-router-dom'
 import CrewDescription from '../components/Crew/CrewDescription'
 import CrewMenu from '../components/Crew/CrewMenu'
-import { Outlet } from 'react-router-dom'
 import Title from '../components/Title'
 import Main from '../components/Crew/Main'
 

@@ -1,7 +1,6 @@
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useCurrentData } from '../../hooks/useCurrentData'
-import { useState } from 'react'
-import { useEffect } from 'react'
 
 function TechnologyImage() {
   const { id } = useParams()

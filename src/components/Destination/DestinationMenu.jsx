@@ -1,6 +1,6 @@
+import clsx from 'clsx'
 import { NavLink } from 'react-router-dom'
 import { useData } from '../../context/useData'
-import clsx from 'clsx'
 
 function DestinationMenu() {
   const { destinations } = useData()

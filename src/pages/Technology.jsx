@@ -1,6 +1,6 @@
+import { Outlet } from 'react-router-dom'
 import TechnologyDescription from '../components/Technology/TechnologyDescription'
 import TechnologyMenu from '../components/Technology/TechnologyMenu'
-import { Outlet } from 'react-router-dom'
 import Title from '../components/Title'
 import Main from '../components/Technology/Main'
 

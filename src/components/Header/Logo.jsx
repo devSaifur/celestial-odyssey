@@ -1,6 +1,6 @@
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+
 function Logo() {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768)
 
