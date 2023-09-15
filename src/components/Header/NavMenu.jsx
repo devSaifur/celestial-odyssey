@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom'
 import { useWhichPage } from '../../hooks/useWhichPage'
 
 function NavMenu({ isOpen }) {
-  const { isHomePage } = useWhichPage()
+  const { isHomePage, isDestinationPage, isCrewPage, isTechnologyPage } =
+    useWhichPage()
 
   return (
     <nav>
@@ -22,11 +23,14 @@ function NavMenu({ isOpen }) {
         <li>
           <NavLink
             to="/"
-            className={({ isActive }) =>
-              clsx({
-                'sm:border-b-4 sm:border-blue-100 sm:py-8': isActive,
-              })
-            }
+            className={clsx(
+              {
+                'sm:border-b-4 sm:py-8': isHomePage,
+              },
+              {
+                'hover:border-b-4 hover:border-gray-500 lg:py-8': !isHomePage,
+              }
+            )}
           >
             <span
               className={clsx(
@@ -41,12 +45,19 @@ function NavMenu({ isOpen }) {
             </span>
           </NavLink>
         </li>
+
         <li>
           <NavLink
             to="/destination/moon"
-            className={({ isActive }) =>
-              clsx({ 'sm:border-b-4 sm:border-blue-100 sm:py-8': isActive })
-            }
+            className={clsx(
+              {
+                'sm:border-b-4 sm:py-8': isDestinationPage,
+              },
+              {
+                'hover:border-b-4 hover:border-gray-500 lg:py-8':
+                  !isDestinationPage,
+              }
+            )}
           >
             <span
               className={clsx(
@@ -61,12 +72,18 @@ function NavMenu({ isOpen }) {
             </span>
           </NavLink>
         </li>
+
         <li>
           <NavLink
             to="/crew/1"
-            className={({ isActive }) =>
-              clsx({ 'sm:border-b-4 sm:border-blue-100 sm:py-8': isActive })
-            }
+            className={clsx(
+              {
+                'sm:border-b-4 sm:py-8': isCrewPage,
+              },
+              {
+                'hover:border-b-4 hover:border-gray-500 lg:py-8': !isCrewPage,
+              }
+            )}
           >
             <span
               className={clsx(
@@ -81,12 +98,19 @@ function NavMenu({ isOpen }) {
             </span>
           </NavLink>
         </li>
+
         <li>
           <NavLink
             to="/technology/1"
-            className={({ isActive }) =>
-              clsx({ 'sm:border-b-4 sm:border-blue-100 sm:py-8': isActive })
-            }
+            className={clsx(
+              {
+                'sm:border-b-4 sm:border-blue-100 sm:py-8': isTechnologyPage,
+              },
+              {
+                'hover:border-b-4 hover:border-gray-500 lg:py-8':
+                  !isTechnologyPage,
+              }
+            )}
           >
             <span
               className={clsx(

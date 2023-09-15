@@ -10,9 +10,11 @@ function CrewMenu() {
             clsx(
               'h-4 w-4 rounded-full border-none',
               {
-                'bg-white': isActive,
+                'bg-slate-50': isActive,
               },
-              { ' bg-slate-600': !isActive }
+              {
+                ' bg-slate-600 transition-colors hover:bg-slate-400': !isActive,
+              }
             )
           }
           to="1"
@@ -27,7 +29,9 @@ function CrewMenu() {
               {
                 'bg-white': isActive,
               },
-              { ' bg-slate-600': !isActive }
+              {
+                ' bg-slate-600 transition-colors hover:bg-slate-400': !isActive,
+              }
             )
           }
           to="2"
@@ -42,7 +46,9 @@ function CrewMenu() {
               {
                 'bg-white': isActive,
               },
-              { ' bg-slate-600': !isActive }
+              {
+                ' bg-slate-600 transition-colors hover:bg-slate-400': !isActive,
+              }
             )
           }
           to="3"
@@ -57,7 +63,9 @@ function CrewMenu() {
               {
                 'bg-white': isActive,
               },
-              { ' bg-slate-600': !isActive }
+              {
+                ' bg-slate-600 transition-colors hover:bg-slate-400': !isActive,
+              }
             )
           }
           to="4"

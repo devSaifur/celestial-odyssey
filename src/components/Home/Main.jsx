@@ -1,6 +1,6 @@
 function Main({ children }) {
   return (
-    <main className="flex flex-col px-8 lg:mb-24 lg:mt-auto lg:flex-row lg:px-48">
+    <main className="flex flex-col px-8 lg:mx-auto lg:mt-auto lg:flex-row lg:gap-96 lg:pb-40">
       {children}
     </main>
   )

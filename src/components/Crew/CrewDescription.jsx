@@ -13,7 +13,7 @@ function CrewDescription() {
       <h1 className="font-serif text-2xl uppercase sm:text-4xl lg:text-6xl">
         {currentCrew.name}
       </h1>
-      <p className="lg:max-w-md">{currentCrew.bio}</p>
+      <p className="lg:max-w-md lg:text-lg">{currentCrew.bio}</p>
     </div>
   )
 }

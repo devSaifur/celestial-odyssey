@@ -11,7 +11,7 @@ function DestinationDescription() {
         <h1 className="font-serif text-heading-l uppercase">
           {currentDestination.name}
         </h1>
-        <p className="mx-auto max-w-[20rem] sm:max-w-xl">
+        <p className="mx-auto max-w-[20rem] sm:max-w-xl lg:text-lg">
           {currentDestination.description}
         </p>
       </div>

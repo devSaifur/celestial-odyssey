@@ -50,6 +50,9 @@ module.exports = {
         'technology-desktop':
           "url('/assets/technology/background-technology-desktop.jpg')",
       },
+      boxShadow: {
+        'button-home': '0px 0px 0px 50px rgba(0, 0, 0, 0.5)',
+      },
     },
   },
   plugins: [],

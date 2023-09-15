@@ -13,7 +13,9 @@ function TechnologyDescription() {
       <h1 className="font-serif text-2xl uppercase sm:text-4xl lg:text-6xl">
         {currentTechnology.name}
       </h1>
-      <p className="max-w-sm">{currentTechnology.description}</p>
+      <p className="max-w-sm lg:max-w-lg lg:text-lg">
+        {currentTechnology.description}
+      </p>
     </div>
   )
 }
