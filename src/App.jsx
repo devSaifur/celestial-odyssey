@@ -1,17 +1,28 @@
+import { Suspense, lazy } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import Home from './pages/Home'
-import Crew from './pages/Crew'
-import Technology from './pages/Technology'
-import DestinationImage from './components/Destination/DestinationImage'
-import CrewImage from './components/Crew/CrewImage'
-import TechnologyImage from './components/Technology/TechnologyImage'
-import AppLayout from './ui/AppLayout'
-import Destination from './pages/Destination'
+import Loader from './ui/Loader'
+
+const AppLayout = lazy(() => import('./ui/AppLayout'))
+const Home = lazy(() => import('./pages/Home'))
+const Destination = lazy(() => import('./pages/Destination'))
+const DestinationImage = lazy(() =>
+  import('./components/Destination/DestinationImage')
+)
+const Crew = lazy(() => import('./pages/Crew'))
+const CrewImage = lazy(() => import('./components/Crew/CrewImage'))
+const Technology = lazy(() => import('./pages/Technology'))
+const TechnologyImage = lazy(() =>
+  import('./components/Technology/TechnologyImage')
+)
 
 const router = createBrowserRouter([
   {
-    element: <AppLayout />,
+    element: (
+      <Suspense fallback={<Loader />}>
+        <AppLayout />
+      </Suspense>
+    ),
     children: [
       {
         path: '/',
