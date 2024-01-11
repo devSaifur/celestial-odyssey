@@ -1,13 +1,19 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { lazy } from 'react'
 
 import AppLayout from './ui/AppLayout'
 import Home from './pages/Home'
-import Destination from './pages/Destination'
-import Crew from './pages/Crew'
-import Technology from './pages/Technology'
-import DestinationImage from './components/Destination/DestinationImage'
-import CrewImage from './components/Crew/CrewImage'
-import TechnologyImage from './components/Technology/TechnologyImage'
+import { Suspense } from 'react'
+const Destination = lazy(() => import('./pages/Destination'))
+const Crew = lazy(() => import('./pages/Crew'))
+const Technology = lazy(() => import('./pages/Technology'))
+const DestinationImage = lazy(() =>
+  import('./components/Destination/DestinationImage')
+)
+const CrewImage = lazy(() => import('./components/Crew/CrewImage'))
+const TechnologyImage = lazy(() =>
+  import('./components/Technology/TechnologyImage')
+)
 
 const router = createBrowserRouter([
   {
@@ -19,18 +25,57 @@ const router = createBrowserRouter([
       },
       {
         path: 'destination',
-        element: <Destination />,
-        children: [{ path: ':id', element: <DestinationImage /> }],
+        element: (
+          <Suspense>
+            <Destination />
+          </Suspense>
+        ),
+        children: [
+          {
+            path: ':id',
+            element: (
+              <Suspense>
+                <DestinationImage />
+              </Suspense>
+            ),
+          },
+        ],
       },
       {
         path: 'crew',
-        element: <Crew />,
-        children: [{ path: ':id', element: <CrewImage /> }],
+        element: (
+          <Suspense>
+            <Crew />
+          </Suspense>
+        ),
+        children: [
+          {
+            path: ':id',
+            element: (
+              <Suspense>
+                <CrewImage />
+              </Suspense>
+            ),
+          },
+        ],
       },
       {
         path: 'technology',
-        element: <Technology />,
-        children: [{ path: ':id', element: <TechnologyImage /> }],
+        element: (
+          <Suspense>
+            <Technology />
+          </Suspense>
+        ),
+        children: [
+          {
+            path: ':id',
+            element: (
+              <Suspense>
+                <TechnologyImage />
+              </Suspense>
+            ),
+          },
+        ],
       },
     ],
   },

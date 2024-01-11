@@ -4,10 +4,11 @@ import DestinationDescription from '../components/Destination/DestinationDescrip
 import Title from '../components/Title'
 import Row from '../components/Destination/Row'
 import Main from '../components/Destination/Main'
+import PageContainer from '../ui/PageContainer'
 
 function Destination() {
   return (
-    <>
+    <PageContainer variant="destination">
       <Main>
         <Row>
           <Title num="01" title="Pick your destination" />
@@ -18,7 +19,7 @@ function Destination() {
           <DestinationDescription />
         </Row>
       </Main>
-    </>
+    </PageContainer>
   )
 }
 

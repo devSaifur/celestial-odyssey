@@ -3,7 +3,7 @@ import Navigation from './Navigation'
 
 function Header() {
   return (
-    <header className="flex min-h-[5rem] items-center justify-between sm:min-h-[6rem] lg:mt-8">
+    <header className="flex min-h-[5rem] items-center justify-between text-white sm:min-h-[6rem] lg:mt-8">
       <Logo />
       <Navigation />
     </header>

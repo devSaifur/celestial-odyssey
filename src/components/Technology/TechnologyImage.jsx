@@ -19,7 +19,7 @@ function TechnologyImage() {
   }, [])
 
   return (
-    <div className="lg:order-3 lg:ml-auto lg:mr-0 lg:max-w-lg">
+    <div className="lg:order-3 lg:ml-60 lg:max-w-lg">
       <img
         src={
           isSmallScreen
