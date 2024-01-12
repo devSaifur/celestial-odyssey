@@ -1,18 +1,18 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { lazy } from 'react'
+import { lazy, Suspense } from 'react'
 
 import AppLayout from './ui/AppLayout'
 import Home from './pages/Home'
-import { Suspense } from 'react'
+import PageContainer from './ui/PageContainer'
 const Destination = lazy(() => import('./pages/Destination'))
 const Crew = lazy(() => import('./pages/Crew'))
 const Technology = lazy(() => import('./pages/Technology'))
-const DestinationImage = lazy(() =>
-  import('./components/Destination/DestinationImage')
+const DestinationImage = lazy(
+  () => import('./components/Destination/DestinationImage')
 )
 const CrewImage = lazy(() => import('./components/Crew/CrewImage'))
-const TechnologyImage = lazy(() =>
-  import('./components/Technology/TechnologyImage')
+const TechnologyImage = lazy(
+  () => import('./components/Technology/TechnologyImage')
 )
 
 const router = createBrowserRouter([
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: 'destination',
         element: (
-          <Suspense>
+          <Suspense fallback={<PageContainer variant="destination" />}>
             <Destination />
           </Suspense>
         ),
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: 'crew',
         element: (
-          <Suspense>
+          <Suspense fallback={<PageContainer variant="crew" />}>
             <Crew />
           </Suspense>
         ),
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
       {
         path: 'technology',
         element: (
-          <Suspense>
+          <Suspense fallback={<PageContainer variant="technology" />}>
             <Technology />
           </Suspense>
         ),
